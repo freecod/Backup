@@ -30,8 +30,14 @@ Think of Backup as an easy way to backup and restore a database, with command li
 
 Begin by installing this package through Composer. Edit your project's `composer.json` file to require `cornford/backup`.
 
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/freecod/Backup"
+        }
+    ],
 	"require": {
-		"cornford/backup": "2.*"
+		"freecod/backup": "2.*"
 	}
 
 Next, update Composer from the Terminal:
@@ -61,6 +67,7 @@ You can now configure Backup in a few simple steps. Open `config/backup.php` and
 - `filename` - A database export filename to use when exporting databases.
 - `compress` - Enable backup compression using gzip. Requires gzencode/gzdecode.
 - `processors` - Set the database engines processor location, trailing slash is required.
+- `tables` - Set the tables which you want export / tables you don't want export.
 
 ## Usage
 
