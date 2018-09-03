@@ -21,7 +21,7 @@ return array(
 	| directory, a trailing slash is required.
 	|
 	*/
-	'path' => '../storage/backup/',
+	'path' => storage_path('backup'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -69,5 +69,24 @@ return array(
 			'restore' => '/usr/bin/'
 		),
 	),
-
+	
+	/*
+	|--------------------------------------------------------------------------
+	| Export tables
+	|--------------------------------------------------------------------------
+	|
+	| If set 'export' array - will be export ONLY selected tables
+	| If set 'ignore' array - will be export ALL tables, except selected
+	|
+	 */
+	
+	'tables' => [
+		'export' => [
+			// 'users',
+		],
+		'ignore' => [
+			'migrations',
+		],
+	]
+	
 );

@@ -109,8 +109,8 @@ class BackupProcess implements BackupProcessInterface {
 
 			if (!$this->processInstance->isSuccessful()) {
 				$this->output = $this->processInstance->getErrorOutput();
-
-				return false;
+				
+				throw new Exception($this->output);
 			}
 		} catch (Exception $exception) {
 			$message = 'An error occurred that prevented the operation ' . $operation . ': ' . $exception->getMessage();

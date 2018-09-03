@@ -1,11 +1,10 @@
+# Fork of cornford/backup
+## Change
+
+* You can set export / ignore tables in config (this time - affect only mysql).
+* Commands db:export / db:restore use config options as default
+
 # An easy way backup and restore databases in Laravel.
-
-[![Latest Stable Version](https://poser.pugx.org/cornford/backup/version.png)](https://packagist.org/packages/cornford/backup)
-[![Total Downloads](https://poser.pugx.org/cornford/backup/d/total.png)](https://packagist.org/packages/cornford/backup)
-[![Build Status](https://travis-ci.org/bradcornford/Backup.svg?branch=master)](https://travis-ci.org/bradcornford/backup)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bradcornford/Backup/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bradcornford/Backup/?branch=master)
-
-### For Laravel 4.x, check [version 1.0.0](https://github.com/bradcornford/Backup/tree/v1.0.0)
 
 Think of Backup as an easy way to backup and restore a database, with command line integration to Laravel's artisan. These include:
 

@@ -30,17 +30,15 @@ class BackupCommandExport extends BackupCommandAbstract
 	{
 		$backupInstance = $this->getBackupInstance($this->input->getOption('database'));
 		$backupInstance->setEnabled(true);
-
+		
 		if ($this->input->getOption('path') !== null) {
 			$backupInstance->setPath($this->input->getOption('path'));
-		} else {
-			$backupInstance->setPath('app/storage/backup/');
 		}
-
+		
 		if ($this->input->getOption('compress') !== null) {
 			$backupInstance->setCompress($this->input->getOption('compress') != 'false' ?: false);
 		}
-
+		
 		if ($this->argument('filename') !== null) {
 			$backupInstance->setFilename($this->argument('filename'));
 		}
@@ -50,8 +48,8 @@ class BackupCommandExport extends BackupCommandAbstract
 				throw new Exception();
 			}
 		} catch (Exception $exception) {
-			$this->error('An error occurred exporting the database.');
-
+			$this->output->error($exception->getMessage());
+			
 			return false;
 		}
 

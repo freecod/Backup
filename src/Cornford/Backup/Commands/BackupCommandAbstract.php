@@ -54,7 +54,10 @@ abstract class BackupCommandAbstract extends Command implements BackupCommandInt
 	 */
 	public function getBackupInstance($database = null)
 	{
-		$configuration = array_merge($this->getConfig('database'), $this->getConfig('backup::config'));
+		$configuration = array_merge(
+			$this->getConfig('database'),
+			($this->getConfig('backup::config') ? $this->getConfig('backup::config') : $this->getConfig('backup'))
+		);
 		$this->backupInstance = $this->backupFactory->build($configuration, $database);
 
 		return $this->backupInstance;
@@ -66,6 +69,14 @@ abstract class BackupCommandAbstract extends Command implements BackupCommandInt
 	 * @return void
 	 */
 	abstract public function fire();
+	
+	/**
+	 * Handle method for Laravel > 5.3
+	 */
+	public function handle()
+	{
+		$this->fire();
+	}
 
 	/**
 	 * Get config by name.
