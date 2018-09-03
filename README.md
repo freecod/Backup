@@ -1,4 +1,4 @@
-# Fork of [cornford/backup](https://github.com/cornford/backup)
+# Fork of [cornford/backup](https://github.com/bradcornford/Backup)
 ## Change
 
 * You can set export / ignore tables in config (this time - affect only mysql).
